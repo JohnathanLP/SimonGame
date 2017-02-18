@@ -4,7 +4,6 @@
 #include <cstdlib>
 #include <iostream>
 #include <time.h>
-#include <fstream>
 
 #define WIDE 600
 #define HIGH 600
@@ -73,9 +72,6 @@ int main()
   sf::Sound sound;
   sound.setBuffer(buffer);
 
-  std::fstream fin;
-  fin.open("input.txt");
-
   int colorDelay = 0;
   bool inputPhase = false;
   bool seriesReady = true;
@@ -88,7 +84,6 @@ int main()
   srand (time(NULL));
   int DELAY = 300;
   bool pause = false;
-  int highScore;
 
   while(window.isOpen())
   {
@@ -254,17 +249,9 @@ int main()
       //game over
       if(gameOver == true)
       {
-        fin >> highScore;
-
-        if(score > highScore)
-        {
-          fin << score;
-        }
         window.draw(rectangle);
         window.draw(text);
         scoreText.setString("Your Score: " + std::to_string(score));
-        highScoreText.setString("High Score: " + std::to_string(highScore));
-        window.draw(highScoreText);
         window.draw(scoreText);
       }
 
@@ -280,5 +267,4 @@ int main()
       }
     }
   }
-  fin.close();
 }
