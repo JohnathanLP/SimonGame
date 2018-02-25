@@ -1,3 +1,3 @@
 # SimonGame
 
-Simon game created using the SFML library as practice
+Simon-like game created using the SFML library as practice
