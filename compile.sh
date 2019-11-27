@@ -1,3 +1,3 @@
 #!/bin/bash
 
-g++ main.cpp -o Simon -lsfml-system -lsfml-window -lsfml-graphics -lsfml-audio
+g++ main.cpp -std=c++11 -o Simon -lsfml-system -lsfml-window -lsfml-graphics -lsfml-audio
